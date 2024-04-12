@@ -7,10 +7,12 @@ class Recipe {
         ArrayList<Ingredient> ingredients;
         ArrayList<Instruction> instructions;
         ArrayList<RecipeCategory> categories;
+        String recipeImageUrl;
 
-    public Recipe(ArrayList<Ingredient> ingredients, ArrayList<Instruction> instructions, ArrayList<RecipeCategory> categories) {
+    public Recipe(ArrayList<Ingredient> ingredients, ArrayList<Instruction> instructions, ArrayList<RecipeCategory> categories, String recipeImageUrl) {
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.categories = categories;
+        this.recipeImageUrl = recipeImageUrl;
     }
 }
