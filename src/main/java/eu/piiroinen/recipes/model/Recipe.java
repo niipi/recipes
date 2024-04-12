@@ -1,15 +1,17 @@
-import com.sun.org.apache.bcel.internal.generic.Instruction;
+package eu.piiroinen.recipes.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
-class Recipe {
 
-        ArrayList<Ingredient> ingredients;
-        ArrayList<Instruction> instructions;
-        ArrayList<RecipeCategory> categories;
+public class Recipe {
+
+        List<Ingredient> ingredients;
+        List<Instruction> instructions;
+        List<RecipeCategory> categories;
         String recipeImageUrl;
 
-    public Recipe(ArrayList<Ingredient> ingredients, ArrayList<Instruction> instructions, ArrayList<RecipeCategory> categories, String recipeImageUrl) {
+    public Recipe(List<Ingredient> ingredients, List<Instruction> instructions, List<RecipeCategory> categories, String recipeImageUrl) {
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.categories = categories;

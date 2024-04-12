@@ -1,4 +1,6 @@
-class RecipeCategory {
+package eu.piiroinen.recipes.model;
+
+public class RecipeCategory {
 
     private int recipeCategoryId;
     private String recipeCategoryName;

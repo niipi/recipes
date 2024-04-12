@@ -1,4 +1,6 @@
-class Ingredient {
+package eu.piiroinen.recipes.model;
+
+public class Ingredient {
 
     String amount;
     String ingredientName;

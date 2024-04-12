@@ -1,4 +1,6 @@
-class Instruction {
+package eu.piiroinen.recipes.model;
+
+public class Instruction {
 
     int ordinal;
     String instructionBody;
