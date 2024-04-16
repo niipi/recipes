@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Added image URL to Recipe after feedback from product owner">
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/FrontendTestController.java" afterDir="false" />
+    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Fixed Maven build, started working on frontend test controller">
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/testdata/FrontendTestCategoryGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/testdata/FrontendTestRecipeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Instruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/piiroinen/recipes/RecipesApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/piiroinen/recipes/RecipesApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/eu/piiroinen/recipes/TestRecipesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/eu/piiroinen/recipes/TestRecipesApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +18,13 @@
     <disable_hints>
       <file url="file://$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" />
     </disable_hints>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -90,7 +91,7 @@
       <workItem from="1712815838562" duration="281000" />
       <workItem from="1712913605411" duration="142000" />
       <workItem from="1712913788125" duration="5267000" />
-      <workItem from="1712935036915" duration="1071000" />
+      <workItem from="1712935036915" duration="8200000" />
     </task>
     <task id="LOCAL−00001" summary="Added preliminary models for first test version">
       <option name="closed" value="true" />
@@ -106,7 +107,14 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1712919120489</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Fixed Maven build, started working on frontend test controller">
+      <option name="closed" value="true" />
+      <created>1712936454229</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1712936454229</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +146,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added preliminary models for first test version" />
     <MESSAGE value="Added image URL to Recipe after feedback from product owner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added image URL to Recipe after feedback from product owner" />
+    <MESSAGE value="Fixed Maven build, started working on frontend test controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Maven build, started working on frontend test controller" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
