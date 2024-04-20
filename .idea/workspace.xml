@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Logging enabled&#10;FrontendTestRecipeGenerator method generateInstructionsForTestRecipes to be fixed">
+    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="FrontendTestRecipeGenerator fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/testdata/FrontendTestRecipeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/testdata/FrontendTestRecipeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,14 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1713606879396</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="FrontendTestRecipeGenerator fixed">
+      <option name="closed" value="true" />
+      <created>1713609263432</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1713609263432</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +172,8 @@
     <MESSAGE value="Fixed Maven build, started working on frontend test controller" />
     <MESSAGE value="Test server returns empty list of recipes.&#10;Added temporary @NoRepositoryBean annotation for future @Entity beans.&#10;Issue in FrontendTestRecipeGenerator to be fixed.&#10;Logging to be introduced" />
     <MESSAGE value="Logging enabled&#10;FrontendTestRecipeGenerator method generateInstructionsForTestRecipes to be fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logging enabled&#10;FrontendTestRecipeGenerator method generateInstructionsForTestRecipes to be fixed" />
+    <MESSAGE value="FrontendTestRecipeGenerator fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="FrontendTestRecipeGenerator fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
