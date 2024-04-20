@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Fixed Maven build, started working on frontend test controller">
+    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Test server returns empty list of recipes.&#10;Added temporary @NoRepositoryBean annotation for future @Entity beans.&#10;Issue in FrontendTestRecipeGenerator to be fixed.&#10;Logging to be introduced">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/RecipesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/RecipesApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/FrontendTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/FrontendTestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Instruction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/testdata/FrontendTestRecipeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/testdata/FrontendTestRecipeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,23 +46,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/npiiroinen/Documents/Studies/CSII/OhtuI/recipes_backend/recipes&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "logging",
+    "last_opened_file_path": "/Users/npiiroinen/Documents/Studies/CSII/OhtuI/recipes_backend/recipes",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="recipes" />
@@ -122,7 +119,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1712936454229</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Test server returns empty list of recipes.&#10;Added temporary @NoRepositoryBean annotation for future @Entity beans.&#10;Issue in FrontendTestRecipeGenerator to be fixed.&#10;Logging to be introduced">
+      <option name="closed" value="true" />
+      <created>1713604273234</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1713604273234</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +159,8 @@
     <MESSAGE value="Added preliminary models for first test version" />
     <MESSAGE value="Added image URL to Recipe after feedback from product owner" />
     <MESSAGE value="Fixed Maven build, started working on frontend test controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Maven build, started working on frontend test controller" />
+    <MESSAGE value="Test server returns empty list of recipes.&#10;Added temporary @NoRepositoryBean annotation for future @Entity beans.&#10;Issue in FrontendTestRecipeGenerator to be fixed.&#10;Logging to be introduced" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test server returns empty list of recipes.&#10;Added temporary @NoRepositoryBean annotation for future @Entity beans.&#10;Issue in FrontendTestRecipeGenerator to be fixed.&#10;Logging to be introduced" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

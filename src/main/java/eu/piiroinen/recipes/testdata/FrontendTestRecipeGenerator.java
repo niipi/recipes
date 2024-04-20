@@ -10,7 +10,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
 public class FrontendTestRecipeGenerator {
+
+    private static final Logger LOG = LoggerFactory.getLogger(FrontendTestRecipeGenerator.class);
 
     private FrontendTestCategoryGenerator categoryGenerator = new FrontendTestCategoryGenerator();
     private List<RecipeCategory> categories = categoryGenerator.generateTestRecipeCategoryList();
@@ -74,8 +79,7 @@ public class FrontendTestRecipeGenerator {
         ArrayList<RecipeCategory> categoriesForKasperinKanaviillokki = new ArrayList<>();
         categoriesForKasperinKanaviillokki.add(chicken);
         ArrayList<Ingredient> ingredients = ingredientsForKasperinKanaviillokki();
-        ArrayList<Instruction> instructions = generateInstructionsForTestRecipes("\n" +
-                "1. " +
+        ArrayList<Instruction> instructions = generateInstructionsForTestRecipes("1. " +
                 "    Leikkaa kananrintafile pienemmiksi paloiksi. Kuori ja silppua sipuli sekä valkosipuli.\n" +
                 "2. " +
                 "    Kuumenna öljy pannulla ja ruskista kananpalat. Lisää sipuli ja valkosipuli, ja kuullota kunnes sipuli on pehmeä.\n" +
@@ -86,9 +90,9 @@ public class FrontendTestRecipeGenerator {
                 "5. " +
                 "    Sekoita ruokakerma ja vehnäjauhot keskenään, lisää seos pannulle ja sekoita hyvin. Anna kiehua hiljalleen noin 10 minuuttia, kunnes kastike sakenee.\n" +
                 "6. " +
-                "    Tarkista maku ja lisää tarvittaessa mausteita. Koristele tuoreilla yrteillä juuri ennen tarjoilua.\n");
+                "    Tarkista maku ja lisää tarvittaessa mausteita. Koristele tuoreilla yrteillä juuri ennen tarjoilua.");
 
-        return new Recipe(ingredients, instructions, categoriesForKasperinKanaviillokki, "https://www.kariniemen.fi/globalassets/emmi/hkscan-finland/kariniemen/kariniemen-kotisivut/kariniemen.fi-reseptikuvat/katselukopiot-kananpojan-viillokki-d4s2852-edit.jpg");
+        return new Recipe("Kasperin kanaviillokki", ingredients, instructions, categoriesForKasperinKanaviillokki, "https://www.kariniemen.fi/globalassets/emmi/hkscan-finland/kariniemen/kariniemen-kotisivut/kariniemen.fi-reseptikuvat/katselukopiot-kananpojan-viillokki-d4s2852-edit.jpg");
     }
 
     public List<Recipe> generateTestRecipeListing() {
