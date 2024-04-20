@@ -1,9 +1,10 @@
 package eu.piiroinen.recipes.model;
 
-import java.util.ArrayList;
+import org.springframework.data.repository.NoRepositoryBean;
+
 import java.util.List;
 
-
+@NoRepositoryBean
 public class Recipe {
 
         List<Ingredient> ingredients;

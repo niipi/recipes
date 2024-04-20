@@ -1,5 +1,8 @@
 package eu.piiroinen.recipes.model;
 
+import org.springframework.data.repository.NoRepositoryBean;
+
+@NoRepositoryBean
 public class Instruction {
 
     int ordinal;

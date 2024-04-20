@@ -51,7 +51,7 @@ public class FrontendTestRecipeGenerator {
     private ArrayList<Instruction> generateInstructionsForTestRecipes(String instructionString) {
         ArrayList<Instruction> instructions = new ArrayList<>();
 
-        Pattern ordinalpattern = Pattern.compile("\d+\W\s");
+        Pattern ordinalpattern = Pattern.compile("\\d+\\W\\s");
         CharSequence originalStringAsCharSequence = instructionString.subSequence(0, instructionString.length()-1);
 
         String[] parts = ordinalpattern.split(originalStringAsCharSequence);
@@ -91,7 +91,7 @@ public class FrontendTestRecipeGenerator {
         return new Recipe(ingredients, instructions, categoriesForKasperinKanaviillokki, "https://www.kariniemen.fi/globalassets/emmi/hkscan-finland/kariniemen/kariniemen-kotisivut/kariniemen.fi-reseptikuvat/katselukopiot-kananpojan-viillokki-d4s2852-edit.jpg");
     }
 
-    private List<Recipe> generateTestRecipeListing() {
+    public List<Recipe> generateTestRecipeListing() {
         ArrayList<Recipe> testRecipes = new ArrayList<>();
 
         testRecipes.add(kasperinKanaviillokki());
