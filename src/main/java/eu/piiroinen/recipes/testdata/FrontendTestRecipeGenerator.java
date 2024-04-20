@@ -56,18 +56,15 @@ public class FrontendTestRecipeGenerator {
     private ArrayList<Instruction> generateInstructionsForTestRecipes(String instructionString) {
         ArrayList<Instruction> instructions = new ArrayList<>();
 
-        Pattern ordinalpattern = Pattern.compile("\\d+\\W\\s");
+        Pattern ordinalpattern = Pattern.compile("(\\d+\\.\\s)");
         CharSequence originalStringAsCharSequence = instructionString.subSequence(0, instructionString.length()-1);
 
         String[] parts = ordinalpattern.split(originalStringAsCharSequence);
 
         for (int i = 0; i < parts.length; i++) {
-            Matcher matcher = ordinalpattern.matcher(parts[i]);
-            if (matcher.matches()) {
-                int ordinal = Integer.parseInt(String.valueOf(parts[i].charAt(0)));
-                Instruction instruction = new Instruction(ordinal, parts[i+1]);
+            if (i > 0) {
+                Instruction instruction = new Instruction(i, parts[i]);
                 instructions.add(instruction);
-                i++;
             }
         }
 
@@ -80,17 +77,17 @@ public class FrontendTestRecipeGenerator {
         categoriesForKasperinKanaviillokki.add(chicken);
         ArrayList<Ingredient> ingredients = ingredientsForKasperinKanaviillokki();
         ArrayList<Instruction> instructions = generateInstructionsForTestRecipes("1. " +
-                "    Leikkaa kananrintafile pienemmiksi paloiksi. Kuori ja silppua sipuli sekä valkosipuli.\n" +
+                "Leikkaa kananrintafile pienemmiksi paloiksi. Kuori ja silppua sipuli sekä valkosipuli.\n" +
                 "2. " +
-                "    Kuumenna öljy pannulla ja ruskista kananpalat. Lisää sipuli ja valkosipuli, ja kuullota kunnes sipuli on pehmeä.\n" +
+                "Kuumenna öljy pannulla ja ruskista kananpalat. Lisää sipuli ja valkosipuli, ja kuullota kunnes sipuli on pehmeä.\n" +
                 "3. " +
-                "    Mausta ruskistetut kananpalat suolalla, mustapippurilla, laakerinlehdillä ja timjamilla. Jos käytät valkoviiniä, lisää se nyt ja anna sen kiehua hetken aikaa.\n" +
+                "Mausta ruskistetut kananpalat suolalla, mustapippurilla, laakerinlehdillä ja timjamilla. Jos käytät valkoviiniä, lisää se nyt ja anna sen kiehua hetken aikaa.\n" +
                 "4. " +
-                "    Lisää panulle kanaliemi ja anna hautua miedolla lämmöllä noin 20 minuuttia.\n" +
+                "Lisää panulle kanaliemi ja anna hautua miedolla lämmöllä noin 20 minuuttia.\n" +
                 "5. " +
-                "    Sekoita ruokakerma ja vehnäjauhot keskenään, lisää seos pannulle ja sekoita hyvin. Anna kiehua hiljalleen noin 10 minuuttia, kunnes kastike sakenee.\n" +
+                "Sekoita ruokakerma ja vehnäjauhot keskenään, lisää seos pannulle ja sekoita hyvin. Anna kiehua hiljalleen noin 10 minuuttia, kunnes kastike sakenee.\n" +
                 "6. " +
-                "    Tarkista maku ja lisää tarvittaessa mausteita. Koristele tuoreilla yrteillä juuri ennen tarjoilua.");
+                "Tarkista maku ja lisää tarvittaessa mausteita. Koristele tuoreilla yrteillä juuri ennen tarjoilua.");
 
         return new Recipe("Kasperin kanaviillokki", ingredients, instructions, categoriesForKasperinKanaviillokki, "https://www.kariniemen.fi/globalassets/emmi/hkscan-finland/kariniemen/kariniemen-kotisivut/kariniemen.fi-reseptikuvat/katselukopiot-kananpojan-viillokki-d4s2852-edit.jpg");
     }

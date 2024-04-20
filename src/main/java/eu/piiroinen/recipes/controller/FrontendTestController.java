@@ -35,7 +35,7 @@ public class FrontendTestController {
                     LOG.debug(recipe.getName());
                 }
             }
-            LOG.info("****\n\n\nResponse ready\n\n\n****");
+
             return ResponseEntity.ok()
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(response);
