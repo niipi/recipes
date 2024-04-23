@@ -1,6 +1,8 @@
 package eu.piiroinen.recipes.controller;
 
 import eu.piiroinen.recipes.model.Recipe;
+import eu.piiroinen.recipes.model.RecipeCategory;
+import eu.piiroinen.recipes.testdata.FrontendTestCategoryGenerator;
 import eu.piiroinen.recipes.testdata.FrontendTestRecipeGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +21,8 @@ public class FrontendTestController {
     private static final Logger LOG = LoggerFactory.getLogger(FrontendTestController.class);
 
     private FrontendTestRecipeGenerator testRecipeGenerator = new FrontendTestRecipeGenerator();
+
+    private FrontendTestCategoryGenerator testCategoryGenerator = new FrontendTestCategoryGenerator();
 
     @RequestMapping(value="/frontendtest")
     public ResponseEntity<Map<String, List<Recipe>>> getTestRecipeListing() {
@@ -41,6 +45,33 @@ public class FrontendTestController {
         } catch (Exception e) {
             LOG.error("An exception occurred.", e);
             Map<String, List<Recipe>> emptyResponse = new HashMap<>();
+            return ResponseEntity.badRequest()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(emptyResponse);
+        }
+    }
+
+    @RequestMapping(value="/frontendcategorytest")
+    public ResponseEntity<Map<String, List<RecipeCategory>>> getTestCategoryListing() {
+        try {
+            Map<String, List<RecipeCategory>> response = new HashMap<>();
+
+            List<RecipeCategory> categories = testCategoryGenerator.generateTestRecipeCategoryList();
+            response.put("categories", categories);
+
+            if (LOG.isDebugEnabled()) {
+                LOG.debug("Response body contains the following recipe categories:");
+                for (RecipeCategory category : categories) {
+                    LOG.debug(category.getRecipeCategoryName());
+                }
+            }
+
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(response);
+        } catch (Exception e) {
+            LOG.error("An exception occurred.", e);
+            Map<String, List<RecipeCategory>> emptyResponse = new HashMap<>();
             return ResponseEntity.badRequest()
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(emptyResponse);
