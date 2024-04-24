@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Removed containerization and modified database connection parameters for the convenience of frontend team.">
+    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Added an endpoint for testing recipe categories for frontend team">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/RecipesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/RecipesApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/FrontendTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/FrontendTestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -139,7 +140,14 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1713609263432</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Added an endpoint for testing recipe categories for frontend team">
+      <option name="closed" value="true" />
+      <created>1713869135937</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1713869135937</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +183,8 @@
     <MESSAGE value="Test server returns empty list of recipes.&#10;Added temporary @NoRepositoryBean annotation for future @Entity beans.&#10;Issue in FrontendTestRecipeGenerator to be fixed.&#10;Logging to be introduced" />
     <MESSAGE value="Logging enabled&#10;FrontendTestRecipeGenerator method generateInstructionsForTestRecipes to be fixed" />
     <MESSAGE value="FrontendTestRecipeGenerator fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="FrontendTestRecipeGenerator fixed" />
+    <MESSAGE value="Added an endpoint for testing recipe categories for frontend team" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an endpoint for testing recipe categories for frontend team" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

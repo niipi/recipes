@@ -10,6 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +26,7 @@ public class FrontendTestController {
 
     private FrontendTestCategoryGenerator testCategoryGenerator = new FrontendTestCategoryGenerator();
 
+    @CrossOrigin(origins="https://localhost:3000")
     @RequestMapping(value="/frontendtest")
     public ResponseEntity<Map<String, List<Recipe>>> getTestRecipeListing() {
         try {
@@ -51,6 +54,7 @@ public class FrontendTestController {
         }
     }
 
+    @CrossOrigin(origins="https://localhost:3000")
     @RequestMapping(value="/frontendcategorytest")
     public ResponseEntity<Map<String, List<RecipeCategory>>> getTestCategoryListing() {
         try {
