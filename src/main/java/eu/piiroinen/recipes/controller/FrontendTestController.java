@@ -26,7 +26,7 @@ public class FrontendTestController {
 
     private FrontendTestCategoryGenerator testCategoryGenerator = new FrontendTestCategoryGenerator();
 
-    @CrossOrigin(origins="https://localhost:3000", allowedHeaders = "*")
+    @CrossOrigin(origins="http://localhost:5173")
     @RequestMapping(value="/frontendtest")
     public ResponseEntity<Map<String, List<Recipe>>> getTestRecipeListing() {
         try {
@@ -54,7 +54,7 @@ public class FrontendTestController {
         }
     }
 
-    @CrossOrigin(origins="https://localhost:3000", allowedHeaders = "*")
+    @CrossOrigin(origins="http://localhost:5173")
     @RequestMapping(value="/frontendcategorytest")
     public ResponseEntity<Map<String, List<RecipeCategory>>> getTestCategoryListing() {
         try {
