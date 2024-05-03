@@ -8,7 +8,7 @@ public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "id_ainekset")
     private Long ingredientId;
     @Column(name="järjestysluku", nullable = false)
     int ordinal;
@@ -16,8 +16,8 @@ public class Ingredient {
     String amount;
     @Column(name="aines", length = 50, nullable = false)
     String ingredientName;
-    @OneToMany
-    @JoinColumn(name="recipeId", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name="resepti_id")
     private Recipe recipe;
 
     public Ingredient() {}

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="resepti")
@@ -19,27 +20,25 @@ public class Recipe {
         boolean isFavourite;
         @Column(name="sesonki", length = 10)
         String season;
-        //TODO: relational columns
-
-        @OneToMany(mappedBy = "ainekset")
-        List<Ingredient> ingredients;
-        @OneToMany(mappedBy ="ohje")
-        List<Instruction> instructions;
-         /*
-        List<RecipeCategory> categories;
+        @Column(name="kuva", length = 250)
         String recipeImageUrl;
-*/
+        @OneToMany(mappedBy = "id_resepti")
+        List<Ingredient> ingredients;
+        @OneToMany(mappedBy ="id_resepti")
+        List<Instruction> instructions;
+        @ManyToMany
+        @JoinTable(name = "reseptin_kategoria", joinColumns = @JoinColumn(name = "kategoria_id"), inverseJoinColumns = @JoinColumn(name = "id"))
+        Set<RecipeCategory> categoriesForRecipe;
 
-    public Recipe(String name, boolean isFavourite, String season, List<Ingredient> ingredients, List<Instruction> instructions) {
+    public Recipe (String name, boolean isFavourite, String season, List<Ingredient> ingredients, List<Instruction> instructions, Set<RecipeCategory> categories, String recipeImageUrl) {
         this.name = name;
         this.isFavourite = isFavourite;
         this.season = season;
+        this.recipeImageUrl = recipeImageUrl;
         this.ingredients = ingredients;
         this.instructions = instructions;
-        /*
-        this.categories = categories;
-        this.recipeImageUrl = recipeImageUrl;
-        */
+        this.categoriesForRecipe = categories;
+
     }
 
     public Recipe() {}
@@ -69,6 +68,10 @@ public class Recipe {
         this.season = season;
     }
 
+    public String getRecipeImageUrl() {
+        return recipeImageUrl;
+    }
+        /*
     public List<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -76,12 +79,10 @@ public class Recipe {
     public List<Instruction> getInstructions() {
         return instructions;
     }
-/*
-    public List<RecipeCategory> getCategories() {
+
+    public Set<RecipeCategory> getCategories() {
         return categories;
     }
 
-    public String getRecipeImageUrl() {
-        return recipeImageUrl;
     }*/
 }

@@ -8,14 +8,14 @@ public class Instruction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "id_ohje")
     private Long instructionId;
     @Column(name="järjestysluku", nullable = false)
     int ordinal;
     @Column(name="ohjeet", length = 1000, nullable = false)
     String instructionBody;
-    @OneToMany
-    @JoinColumn(name="recipeId", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name="resepti_id")
     private Recipe recipe;
 
     public Instruction() {}
