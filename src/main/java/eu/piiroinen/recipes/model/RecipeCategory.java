@@ -1,19 +1,26 @@
 package eu.piiroinen.recipes.model;
 
 
-import org.springframework.data.repository.NoRepositoryBean;
+import jakarta.persistence.*;
 
-@NoRepositoryBean
+@Entity
+@Table(name="kategoriat")
 public class RecipeCategory {
 
-    private int recipeCategoryId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long recipeCategoryId;
+    @Column(name="nimi", length = 50, nullable = false)
     private String recipeCategoryName;
 
     public RecipeCategory(String recipeCategoryName) {
         this.recipeCategoryName = recipeCategoryName;
     }
 
-    public int getRecipeCategoryId() {
+    public RecipeCategory() {}
+
+    public Long getRecipeCategoryId() {
         return recipeCategoryId;
     }
 

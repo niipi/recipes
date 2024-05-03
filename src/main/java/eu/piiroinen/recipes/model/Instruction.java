@@ -1,18 +1,32 @@
 package eu.piiroinen.recipes.model;
 
-import org.springframework.data.repository.NoRepositoryBean;
+import jakarta.persistence.*;
 
-@NoRepositoryBean
+@Entity
+@Table(name="ohje")
 public class Instruction {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long instructionId;
+    @Column(name="järjestysluku", nullable = false)
     int ordinal;
+    @Column(name="ohjeet", length = 1000, nullable = false)
     String instructionBody;
+    @OneToMany
+    @JoinColumn(name="recipeId", referencedColumnName = "id")
+    private Recipe recipe;
 
     public Instruction() {}
 
     public Instruction(int ordinal, String instructionBody) {
         this.ordinal = ordinal;
         this.instructionBody = instructionBody;
+    }
+
+    public Long getInstructionId() {
+        return instructionId;
     }
 
     public int getOrdinal() {
