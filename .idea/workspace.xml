@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Redid entity models in according to preliminary db schema&#10;Missing recipeBelongsToCategory mapping and possibly other things...">
+    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Entity relations under construction, mapping ids not finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/FrontendTestController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Ingredient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Instruction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/testdata/FrontendTestCategoryGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/testdata/FrontendTestRecipeGenerator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +91,7 @@
       <workItem from="1712913605411" duration="142000" />
       <workItem from="1712913788125" duration="5267000" />
       <workItem from="1712935036915" duration="8200000" />
-      <workItem from="1714720601515" duration="11943000" />
+      <workItem from="1714720601515" duration="20895000" />
     </task>
     <task id="LOCAL−00001" summary="Added preliminary models for first test version">
       <option name="closed" value="true" />
@@ -173,7 +170,14 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1714723543643</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Entity relations under construction, mapping ids not finished">
+      <option name="closed" value="true" />
+      <created>1714740539736</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1714740539736</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +218,8 @@
     <MESSAGE value="Still attempting to configure CORS for frontent test endpoints, to be tested" />
     <MESSAGE value="CORS works on my machine when running frontend" />
     <MESSAGE value="Redid entity models in according to preliminary db schema&#10;Missing recipeBelongsToCategory mapping and possibly other things..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Redid entity models in according to preliminary db schema&#10;Missing recipeBelongsToCategory mapping and possibly other things..." />
+    <MESSAGE value="Entity relations under construction, mapping ids not finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entity relations under construction, mapping ids not finished" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -12,7 +12,7 @@ public class Recipe {
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        @Column(name = "id")
+        @Column(name = "id_resepti")
         private Long recipeId;
         @Column(name="nimi", length = 250, nullable = false)
         String name;
@@ -22,13 +22,15 @@ public class Recipe {
         String season;
         @Column(name="kuva", length = 250)
         String recipeImageUrl;
-        @OneToMany(mappedBy = "id_resepti")
-        List<Ingredient> ingredients;
-        @OneToMany(mappedBy ="id_resepti")
-        List<Instruction> instructions;
+        @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
+        public List<Ingredient> ingredients;
+        @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
+        public List<Instruction> instructions;
         @ManyToMany
-        @JoinTable(name = "reseptin_kategoria", joinColumns = @JoinColumn(name = "kategoria_id"), inverseJoinColumns = @JoinColumn(name = "id"))
-        Set<RecipeCategory> categoriesForRecipe;
+        @JoinTable(name = "reseptin_kategoria",
+                joinColumns = @JoinColumn(name = "id_resepti", referencedColumnName = "id_resepti"),
+                inverseJoinColumns = @JoinColumn(name = "id_kategoria", referencedColumnName = "id_kategoria"))
+        public Set<RecipeCategory> categoriesForRecipe;
 
     public Recipe (String name, boolean isFavourite, String season, List<Ingredient> ingredients, List<Instruction> instructions, Set<RecipeCategory> categories, String recipeImageUrl) {
         this.name = name;

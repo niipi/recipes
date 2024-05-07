@@ -15,9 +15,8 @@ public class RecipeCategory {
     private Long recipeCategoryId;
     @Column(name="nimi", length = 50, nullable = false)
     private String recipeCategoryName;
-    @ManyToMany
-    @JoinTable(name = "reseptin_kategoria", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "id_kategoria"))
-    Set<Recipe> recipesForCategory;
+    @ManyToMany(mappedBy = "categoriesForRecipe")
+    public Set<Recipe> recipesForCategory;
 
     public RecipeCategory(String recipeCategoryName) {
         this.recipeCategoryName = recipeCategoryName;

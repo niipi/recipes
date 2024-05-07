@@ -16,8 +16,8 @@ public class Ingredient {
     String amount;
     @Column(name="aines", length = 50, nullable = false)
     String ingredientName;
-    @ManyToOne
-    @JoinColumn(name="resepti_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id_resepti")
     private Recipe recipe;
 
     public Ingredient() {}

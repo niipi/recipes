@@ -14,8 +14,8 @@ public class Instruction {
     int ordinal;
     @Column(name="ohjeet", length = 1000, nullable = false)
     String instructionBody;
-    @ManyToOne
-    @JoinColumn(name="resepti_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id_resepti")
     private Recipe recipe;
 
     public Instruction() {}
