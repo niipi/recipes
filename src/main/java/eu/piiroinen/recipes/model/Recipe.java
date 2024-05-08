@@ -30,9 +30,9 @@ public class Recipe {
         @JoinTable(name = "reseptin_kategoria",
                 joinColumns = @JoinColumn(name = "id_resepti", referencedColumnName = "id_resepti"),
                 inverseJoinColumns = @JoinColumn(name = "id_kategoria", referencedColumnName = "id_kategoria"))
-        public Set<RecipeCategory> categoriesForRecipe;
+        public List<RecipeCategory> categoriesForRecipe;
 
-    public Recipe (String name, boolean isFavourite, String season, List<Ingredient> ingredients, List<Instruction> instructions, Set<RecipeCategory> categories, String recipeImageUrl) {
+    public Recipe (String name, boolean isFavourite, String season, List<Ingredient> ingredients, List<Instruction> instructions, List<RecipeCategory> categories, String recipeImageUrl) {
         this.name = name;
         this.isFavourite = isFavourite;
         this.season = season;

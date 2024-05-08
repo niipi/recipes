@@ -3,7 +3,8 @@ package eu.piiroinen.recipes.model;
 
 import jakarta.persistence.*;
 
-import java.util.Set;
+import java.util.List;
+
 
 @Entity
 @Table(name="kategoriat")
@@ -16,7 +17,7 @@ public class RecipeCategory {
     @Column(name="nimi", length = 50, nullable = false)
     private String recipeCategoryName;
     @ManyToMany(mappedBy = "categoriesForRecipe")
-    public Set<Recipe> recipesForCategory;
+    public List<Recipe> recipesForCategory;
 
     public RecipeCategory(String recipeCategoryName) {
         this.recipeCategoryName = recipeCategoryName;
