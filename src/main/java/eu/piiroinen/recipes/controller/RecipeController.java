@@ -102,4 +102,26 @@ public class RecipeController {
         }
     }
 
+    @GetMapping("/favourite")
+    public ResponseEntity<Map<String, Optional<List<Recipe>>>> getFavouriteRecipes() {
+        try {
+            Map<String, Optional<List<Recipe>>> response = new HashMap<>();
+            Optional<List<Recipe>> favourites = this.recipeRepository.findRecipesByFavouriteIsTrue();
+            if (favourites.isPresent()) {
+                response.put("recipes", favourites);
+            }
+            // If an empty response body is received with status code 200, no favourite recipes exist
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(response);
+        } catch (Exception e) {
+            LOG.error("An exception occurred in RecipeController with route /recipe/favourite: ", e);
+            Map<String, Optional<List<Recipe>>> emptyResponse = new HashMap<>();
+            // Empty response body with status code 500 is indicative of a server error
+            return ResponseEntity.status(500)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(emptyResponse);
+        }
+    }
+
 }

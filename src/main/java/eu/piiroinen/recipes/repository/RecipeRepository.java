@@ -15,6 +15,8 @@ public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 
     List<Recipe> findRecipesBySeason(String season);
 
+    Optional<List<Recipe>> findRecipesByFavouriteIsTrue();
+
     // TODO: Create, update, delete
 
 }
