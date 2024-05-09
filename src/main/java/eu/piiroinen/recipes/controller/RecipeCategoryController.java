@@ -47,7 +47,7 @@ public class RecipeCategoryController {
     public ResponseEntity<Map<String, List<RecipeCategory>>> getRecipesForCategory(
             @RequestParam(name="recipeCategoryId") Long recipeCategoryId) {
         try {
-            List<RecipeCategory> categories = this.recipeCategoryRepository.findRecipesByRecipeCategoryId(recipeCategoryId);
+            List<RecipeCategory> categories = this.recipeCategoryRepository.findRecipesByRecipeCategoryIdOrderByRecipeName(recipeCategoryId);
             Map<String, List<RecipeCategory>> response = new HashMap<>();
             response.put("recipesByCategory", categories);
             return ResponseEntity.ok()

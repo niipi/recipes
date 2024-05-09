@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Fixed migration schema, Flyway plugin still needs configuration">
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/RecipeCategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/IngredientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/InstructionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/RecipeCategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/RecipeRepository.java" afterDir="false" />
+    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Started on REST API">
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/RecipeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/RecipeCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/RecipeCategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/RecipeCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/RecipeCategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/RecipeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +92,7 @@
       <workItem from="1712913605411" duration="142000" />
       <workItem from="1712913788125" duration="5267000" />
       <workItem from="1712935036915" duration="8200000" />
-      <workItem from="1714720601515" duration="25301000" />
+      <workItem from="1714720601515" duration="32212000" />
     </task>
     <task id="LOCAL−00001" summary="Added preliminary models for first test version">
       <option name="closed" value="true" />
@@ -187,7 +185,14 @@
       <option name="presentableId" value="LOCAL−00013" />
       <updated>1715091719643</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL−00014" summary="Started on REST API">
+      <option name="closed" value="true" />
+      <created>1715150639633</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1715150639633</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +235,8 @@
     <MESSAGE value="Redid entity models in according to preliminary db schema&#10;Missing recipeBelongsToCategory mapping and possibly other things..." />
     <MESSAGE value="Entity relations under construction, mapping ids not finished" />
     <MESSAGE value="Fixed migration schema, Flyway plugin still needs configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed migration schema, Flyway plugin still needs configuration" />
+    <MESSAGE value="Started on REST API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started on REST API" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

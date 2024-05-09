@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name="resepti")
@@ -15,7 +14,7 @@ public class Recipe {
         @Column(name = "id_resepti")
         private Long recipeId;
         @Column(name="nimi", length = 250, nullable = false)
-        String name;
+        String recipeName;
         @Column(name="suosikki", nullable = false)
         boolean isFavourite;
         @Column(name="sesonki", length = 10)
@@ -33,7 +32,7 @@ public class Recipe {
         public List<RecipeCategory> categoriesForRecipe;
 
     public Recipe (String name, boolean isFavourite, String season, List<Ingredient> ingredients, List<Instruction> instructions, List<RecipeCategory> categories, String recipeImageUrl) {
-        this.name = name;
+        this.recipeName = name;
         this.isFavourite = isFavourite;
         this.season = season;
         this.recipeImageUrl = recipeImageUrl;
@@ -50,8 +49,8 @@ public class Recipe {
         return recipeId;
     }
 
-    public String getName() {
-        return name;
+    public String getRecipeName() {
+        return recipeName;
     }
 
     public boolean isFavourite() {

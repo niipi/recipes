@@ -9,8 +9,8 @@ public interface RecipeCategoryRepository extends CrudRepository<RecipeCategory,
 
     List<RecipeCategory> findAll();
 
-    // Categories to be returned for a single recipe
-    List<RecipeCategory> findRecipesByRecipeCategoryId(Long recipeCategoryId);
+    // Categories to be returned for a single recipe, implementation will give always alphabetical listing
+    List<RecipeCategory> findRecipesByRecipeCategoryIdOrderByRecipeName(Long recipeCategoryId);
 
     // TODO: Create, update, delete
 
