@@ -1,7 +1,6 @@
 package eu.piiroinen.recipes.repository;
 
 import eu.piiroinen.recipes.model.Recipe;
-import eu.piiroinen.recipes.model.RecipeCategory;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

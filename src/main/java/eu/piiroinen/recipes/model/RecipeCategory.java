@@ -3,6 +3,7 @@ package eu.piiroinen.recipes.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Set;
 
@@ -15,6 +16,7 @@ public class RecipeCategory {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_kategoria")
     private Long recipeCategoryId;
+    @NotNull
     @Column(name="nimi", length = 50, nullable = false)
     private String recipeCategoryName;
     @ManyToMany(mappedBy = "categoriesForRecipe")

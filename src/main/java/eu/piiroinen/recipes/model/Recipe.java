@@ -2,7 +2,8 @@ package eu.piiroinen.recipes.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 import java.util.Set;
@@ -15,8 +16,10 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_resepti")
     private Long recipeId;
+    @NotEmpty
     @Column(name = "nimi", length = 250, nullable = false)
     String recipeName;
+    @NotNull
     @Column(name = "suosikki", nullable = false)
     boolean isFavourite;
     @Column(name = "sesonki", length = 10)

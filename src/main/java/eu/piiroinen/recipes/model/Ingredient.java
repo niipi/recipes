@@ -1,6 +1,7 @@
 package eu.piiroinen.recipes.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="ainekset")
@@ -10,10 +11,12 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_ainekset")
     private Long ingredientId;
+    @NotNull
     @Column(name="järjestysluku", nullable = false)
     int ordinal;
     @Column(name="määrä", length = 50)
     String amount;
+    @NotNull
     @Column(name="aines", length = 50, nullable = false)
     String ingredientName;
     @ManyToOne(cascade = CascadeType.ALL)
