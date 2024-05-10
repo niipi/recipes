@@ -2,6 +2,7 @@ package eu.piiroinen.recipes.repository;
 
 import eu.piiroinen.recipes.model.Recipe;
 import eu.piiroinen.recipes.model.RecipeCategory;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -11,11 +12,15 @@ public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 
     Optional<Recipe> findById(Long recipeId);
 
-    Optional<List<RecipeCategory>> findCategoriesByRecipeId(Long recipeId);
+    // Recipes to be returned for a single category, implementation will give always alphabetical listing
+     @Query(
+           value = "select * from resepti where id_resepti in (select id_resepti from reseptin_kategoria where id_kategoria = ?1)",
+         nativeQuery = true)
+    List<Recipe> findByCategoriesForRecipeOrderByRecipeName(Long recipeCategoryId);
 
     List<Recipe> findRecipesBySeason(String season);
 
-    Optional<List<Recipe>> findRecipesByFavouriteIsTrue();
+    Optional<List<Recipe>> findRecipesByIsFavouriteIsTrue();
 
     // TODO: Create, update, delete
 

@@ -17,7 +17,7 @@ public class RecipeCategory {
     @Column(name="nimi", length = 50, nullable = false)
     private String recipeCategoryName;
     @ManyToMany(mappedBy = "categoriesForRecipe")
-    public List<Recipe> recipesForCategory;
+    public List<Recipe> categoriesForRecipe;
 
     public RecipeCategory(String recipeCategoryName) {
         this.recipeCategoryName = recipeCategoryName;

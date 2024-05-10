@@ -1,5 +1,6 @@
 package eu.piiroinen.recipes.controller;
 
+import eu.piiroinen.recipes.model.Recipe;
 import eu.piiroinen.recipes.model.RecipeCategory;
 import eu.piiroinen.recipes.repository.RecipeCategoryRepository;
 import org.slf4j.Logger;
@@ -43,20 +44,26 @@ public class RecipeCategoryController {
         }
     }
 
-    @GetMapping("/recipes")
-    public ResponseEntity<Map<String, List<RecipeCategory>>> getRecipesForCategory(
-            @RequestParam(name="recipeCategoryId") Long recipeCategoryId) {
+    @GetMapping("/recipe")
+    public ResponseEntity<Map<String, List<RecipeCategory>>> getRecipeCategoriesByRecipeId(
+            @RequestParam(name="recipeId") Long recipeId) {
         try {
-            List<RecipeCategory> categories = this.recipeCategoryRepository.findRecipesByRecipeCategoryIdOrderByRecipeName(recipeCategoryId);
             Map<String, List<RecipeCategory>> response = new HashMap<>();
-            response.put("recipesByCategory", categories);
+            Optional<List<RecipeCategory>> recipeCategoryList = this.recipeCategoryRepository.findCategoriesByCategoriesForRecipe(recipeId);
+            if (recipeCategoryList.isPresent()) {
+                response.put("recipeCategories", recipeCategoryList.get());
+            }
+            // If an empty response body is received with status code 200, either no recipe with given id exists
+            // or the corresponding recipe has no relation to known categories
             return ResponseEntity.ok()
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(response);
+
         } catch (Exception e) {
-            LOG.error("An exception occurred in RecipeCategoryController: ", e);
+            LOG.error("An exception occurred in RecipeCategoryController with route /recipe/recipeId, parameter: {}", recipeId);
+            LOG.error("\nAnd with exception message: ", e);
             Map<String, List<RecipeCategory>> emptyResponse = new HashMap<>();
-            emptyResponse.put("recipesByCategory", new ArrayList<>());
+            // Empty response with status code 500 is indicative of a server error, perhaps retry?
             return ResponseEntity.status(500)
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(emptyResponse);

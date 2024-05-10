@@ -53,26 +53,22 @@ public class RecipeController {
         }
     }
 
+
     @GetMapping("/categories")
-    public ResponseEntity<Map<String, List<RecipeCategory>>> getRecipeCategoriesByRecipeId(
-            @RequestParam(name="recipeId") Long recipeId) {
+    public ResponseEntity<Map<String, List<Recipe>>> getRecipesForCategory(
+            @RequestParam(name="recipeCategoryId") Long recipeCategoryId) {
         try {
-            Map<String, List<RecipeCategory>> response = new HashMap<>();
-            Optional<List<RecipeCategory>> recipeCategoryList = this.recipeRepository.findCategoriesByRecipeId(recipeId);
-            if (recipeCategoryList.isPresent()) {
-                response.put("recipeCategories", recipeCategoryList.get());
+            Map<String, List<Recipe>> response = new HashMap<>();
+            List<Recipe> recipes = this.recipeRepository.findByCategoriesForRecipeOrderByRecipeName(recipeCategoryId);
+            if (Optional.ofNullable(recipes).isPresent()) {
+                response.put("recipesByCategory", recipes);
             }
-            // If an empty response body is received with status code 200, either no recipe with given id exists
-            // or the corresponding recipe has no relation to known categories
             return ResponseEntity.ok()
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(response);
-
         } catch (Exception e) {
-            LOG.error("An exception occurred in RecipeController with route /recipe/id, parameter: {}", recipeId);
-            LOG.error("\nAnd with exception message: ", e);
-            Map<String, List<RecipeCategory>> emptyResponse = new HashMap<>();
-            // Empty response with status code 500 is indicative of a server error, perhaps retry?
+            LOG.error("An exception occurred in RecipeController: ", e);
+            Map<String, List<Recipe>> emptyResponse = new HashMap<>();
             return ResponseEntity.status(500)
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(emptyResponse);
@@ -106,7 +102,7 @@ public class RecipeController {
     public ResponseEntity<Map<String, Optional<List<Recipe>>>> getFavouriteRecipes() {
         try {
             Map<String, Optional<List<Recipe>>> response = new HashMap<>();
-            Optional<List<Recipe>> favourites = this.recipeRepository.findRecipesByFavouriteIsTrue();
+            Optional<List<Recipe>> favourites = this.recipeRepository.findRecipesByIsFavouriteIsTrue();
             if (favourites.isPresent()) {
                 response.put("recipes", favourites);
             }
