@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @RequestMapping("/recipe")
 @Controller
@@ -28,9 +25,9 @@ public class RecipeController {
     @Autowired
     private RecipeRepository recipeRepository;
 
-    @GetMapping("/id")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Map<String, Recipe>> getRecipeById(
-            @RequestParam(name="recipeId") Long recipeId) {
+            @PathVariable(name="id") Long recipeId) {
         try {
             Map<String, Recipe> response = new HashMap<>();
             Optional<Recipe> recipe = this.recipeRepository.findById(recipeId);
@@ -55,11 +52,11 @@ public class RecipeController {
 
 
     @GetMapping("/categories")
-    public ResponseEntity<Map<String, List<Recipe>>> getRecipesForCategory(
+    public ResponseEntity<Map<String, Set<Recipe>>> getRecipesForCategory(
             @RequestParam(name="recipeCategoryId") Long recipeCategoryId) {
         try {
-            Map<String, List<Recipe>> response = new HashMap<>();
-            List<Recipe> recipes = this.recipeRepository.findByCategoriesForRecipeOrderByRecipeName(recipeCategoryId);
+            Map<String, Set<Recipe>> response = new HashMap<>();
+            Set<Recipe> recipes = this.recipeRepository.findByCategoriesForRecipeOrderByRecipeName(recipeCategoryId);
             if (Optional.ofNullable(recipes).isPresent()) {
                 response.put("recipesByCategory", recipes);
             }
@@ -68,19 +65,19 @@ public class RecipeController {
                     .body(response);
         } catch (Exception e) {
             LOG.error("An exception occurred in RecipeController: ", e);
-            Map<String, List<Recipe>> emptyResponse = new HashMap<>();
+            Map<String, Set<Recipe>> emptyResponse = new HashMap<>();
             return ResponseEntity.status(500)
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(emptyResponse);
         }
     }
 
-    @GetMapping("/{season}")
+    @GetMapping("/season/{season}")
     public ResponseEntity<Map<String, List<Recipe>>> getRecipesBySeason(
             @PathVariable String season) {
         try {
             Map<String, List<Recipe>> response = new HashMap<>();
-            List<Recipe> recipesBySeason = this.recipeRepository.findRecipesBySeason(season);
+            List<Recipe> recipesBySeason = this.recipeRepository.findRecipesBySeasonOrderByRecipeName(season);
             response.put("recipes", recipesBySeason);
             // A successful fetch may not always return something, because season is not obligatory for recipes.
             // Status code 200 with empty response tells us there are no recipes in the selected season available.
@@ -98,11 +95,12 @@ public class RecipeController {
         }
     }
 
+    // Please note that this mapping will change after user class is added
     @GetMapping("/favourite")
     public ResponseEntity<Map<String, Optional<List<Recipe>>>> getFavouriteRecipes() {
         try {
             Map<String, Optional<List<Recipe>>> response = new HashMap<>();
-            Optional<List<Recipe>> favourites = this.recipeRepository.findRecipesByIsFavouriteIsTrue();
+            Optional<List<Recipe>> favourites = this.recipeRepository.findRecipesByIsFavouriteIsTrueOrderByRecipeName();
             if (favourites.isPresent()) {
                 response.put("recipes", favourites);
             }

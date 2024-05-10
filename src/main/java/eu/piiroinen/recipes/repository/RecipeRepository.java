@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 
@@ -16,11 +17,11 @@ public interface RecipeRepository extends CrudRepository<Recipe, Long> {
      @Query(
            value = "select * from resepti where id_resepti in (select id_resepti from reseptin_kategoria where id_kategoria = ?1)",
          nativeQuery = true)
-    List<Recipe> findByCategoriesForRecipeOrderByRecipeName(Long recipeCategoryId);
+     Set<Recipe> findByCategoriesForRecipeOrderByRecipeName(Long recipeCategoryId);
 
-    List<Recipe> findRecipesBySeason(String season);
+    List<Recipe> findRecipesBySeasonOrderByRecipeName(String season);
 
-    Optional<List<Recipe>> findRecipesByIsFavouriteIsTrue();
+    Optional<List<Recipe>> findRecipesByIsFavouriteIsTrueOrderByRecipeName();
 
     // TODO: Create, update, delete
 

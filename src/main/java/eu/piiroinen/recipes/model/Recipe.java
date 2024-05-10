@@ -1,37 +1,40 @@
 package eu.piiroinen.recipes.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="resepti")
 public class Recipe {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
-        @Column(name = "id_resepti")
-        private Long recipeId;
-        @Column(name="nimi", length = 250, nullable = false)
-        String recipeName;
-        @Column(name="suosikki", nullable = false)
-        boolean isFavourite;
-        @Column(name="sesonki", length = 10)
-        String season;
-        @Column(name="kuva", length = 250)
-        String recipeImageUrl;
-        @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
-        public List<Ingredient> ingredients;
-        @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
-        public List<Instruction> instructions;
-        @ManyToMany
-        @JoinTable(name = "reseptin_kategoria",
-                joinColumns = @JoinColumn(name = "id_resepti", referencedColumnName = "id_resepti"),
-                inverseJoinColumns = @JoinColumn(name = "id_kategoria", referencedColumnName = "id_kategoria"))
-        public List<RecipeCategory> categoriesForRecipe;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_resepti")
+    private Long recipeId;
+    @Column(name = "nimi", length = 250, nullable = false)
+    String recipeName;
+    @Column(name = "suosikki", nullable = false)
+    boolean isFavourite;
+    @Column(name = "sesonki", length = 10)
+    String season;
+    @Column(name = "kuva", length = 250)
+    String recipeImageUrl;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
+    public List<Ingredient> ingredients;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
+    public List<Instruction> instructions;
+    @ManyToMany
+    @JsonIgnore
+    @JoinTable(name = "reseptin_kategoria",
+            joinColumns = @JoinColumn(name = "id_resepti", referencedColumnName = "id_resepti"),
+            inverseJoinColumns = @JoinColumn(name = "id_kategoria", referencedColumnName = "id_kategoria"))
+    public Set<RecipeCategory> categoriesForRecipe;
 
-    public Recipe (String name, boolean isFavourite, String season, List<Ingredient> ingredients, List<Instruction> instructions, List<RecipeCategory> categories, String recipeImageUrl) {
+    public Recipe(String name, boolean isFavourite, String season, List<Ingredient> ingredients, List<Instruction> instructions, Set<RecipeCategory> categories, String recipeImageUrl) {
         this.recipeName = name;
         this.isFavourite = isFavourite;
         this.season = season;
@@ -42,7 +45,8 @@ public class Recipe {
 
     }
 
-    public Recipe() {}
+    public Recipe() {
+    }
 
 
     public Long getId() {
@@ -72,18 +76,4 @@ public class Recipe {
     public String getRecipeImageUrl() {
         return recipeImageUrl;
     }
-        /*
-    public List<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public List<Instruction> getInstructions() {
-        return instructions;
-    }
-
-    public Set<RecipeCategory> getCategories() {
-        return categories;
-    }
-
-    }*/
 }

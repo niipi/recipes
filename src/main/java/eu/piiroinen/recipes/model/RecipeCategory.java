@@ -1,9 +1,10 @@
 package eu.piiroinen.recipes.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -17,7 +18,8 @@ public class RecipeCategory {
     @Column(name="nimi", length = 50, nullable = false)
     private String recipeCategoryName;
     @ManyToMany(mappedBy = "categoriesForRecipe")
-    public List<Recipe> categoriesForRecipe;
+    @JsonIgnore
+    public Set<Recipe> categoriesForRecipe;
 
     public RecipeCategory(String recipeCategoryName) {
         this.recipeCategoryName = recipeCategoryName;

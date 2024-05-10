@@ -26,18 +26,18 @@ public class RecipeCategoryController {
     private RecipeCategoryRepository recipeCategoryRepository;
 
     @GetMapping("/all")
-    public ResponseEntity<Map<String, List<RecipeCategory>>> getAllCategories() {
+    public ResponseEntity<Map<String, Set<RecipeCategory>>> getAllCategories() {
         try {
-            List<RecipeCategory> categories = this.recipeCategoryRepository.findAll();
-            Map<String, List<RecipeCategory>> response = new HashMap<>();
+            Set<RecipeCategory> categories = this.recipeCategoryRepository.findAll();
+            Map<String, Set<RecipeCategory>> response = new HashMap<>();
             response.put("categories", categories);
             return ResponseEntity.ok()
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(response);
         } catch (Exception e) {
             LOG.error("An exception occurred in RecipeCategoryController: ", e);
-            Map<String, List<RecipeCategory>> emptyResponse = new HashMap<>();
-            emptyResponse.put("categories", new ArrayList<>());
+            Map<String, Set<RecipeCategory>> emptyResponse = new HashMap<>();
+            emptyResponse.put("categories", new HashSet<>());
             return ResponseEntity.status(500)
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(emptyResponse);
@@ -45,11 +45,11 @@ public class RecipeCategoryController {
     }
 
     @GetMapping("/recipe")
-    public ResponseEntity<Map<String, List<RecipeCategory>>> getRecipeCategoriesByRecipeId(
+    public ResponseEntity<Map<String, Set<RecipeCategory>>> getRecipeCategoriesByRecipeId(
             @RequestParam(name="recipeId") Long recipeId) {
         try {
-            Map<String, List<RecipeCategory>> response = new HashMap<>();
-            Optional<List<RecipeCategory>> recipeCategoryList = this.recipeCategoryRepository.findCategoriesByCategoriesForRecipe(recipeId);
+            Map<String, Set<RecipeCategory>> response = new HashMap<>();
+            Optional<Set<RecipeCategory>> recipeCategoryList = this.recipeCategoryRepository.findCategoriesByCategoriesForRecipe(recipeId);
             if (recipeCategoryList.isPresent()) {
                 response.put("recipeCategories", recipeCategoryList.get());
             }
@@ -62,7 +62,7 @@ public class RecipeCategoryController {
         } catch (Exception e) {
             LOG.error("An exception occurred in RecipeCategoryController with route /recipe/recipeId, parameter: {}", recipeId);
             LOG.error("\nAnd with exception message: ", e);
-            Map<String, List<RecipeCategory>> emptyResponse = new HashMap<>();
+            Map<String, Set<RecipeCategory>> emptyResponse = new HashMap<>();
             // Empty response with status code 500 is indicative of a server error, perhaps retry?
             return ResponseEntity.status(500)
                     .contentType(MediaType.APPLICATION_JSON)
