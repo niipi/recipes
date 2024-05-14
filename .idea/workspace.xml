@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="API endpoints done">
+    <list default="true" id="67f6a2b8-2921-4056-9e9b-62cd686a8985" name="Changes" comment="Added Flyway configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Instruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/model/RecipeCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/RecipeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/RecipesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/RecipesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/RecipeCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/RecipeCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/controller/RecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/IngredientRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/piiroinen/recipes/repository/InstructionRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,28 +49,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/npiiroinen/Documents/Studies/CSII/OhtuI/recipes_backend/recipes",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "953359d42ecb407753858da439153886",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/npiiroinen/Documents/Studies/CSII/OhtuI/recipes_backend/recipes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;953359d42ecb407753858da439153886&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="RecipesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="recipes" />
@@ -93,7 +92,8 @@
       <workItem from="1712913605411" duration="142000" />
       <workItem from="1712913788125" duration="5267000" />
       <workItem from="1712935036915" duration="8200000" />
-      <workItem from="1714720601515" duration="45781000" />
+      <workItem from="1714720601515" duration="51560000" />
+      <workItem from="1715667305133" duration="1796000" />
     </task>
     <task id="LOCAL−00001" summary="Added preliminary models for first test version">
       <option name="closed" value="true" />
@@ -221,7 +221,21 @@
       <option name="presentableId" value="LOCAL−00018" />
       <updated>1715334250626</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL−00019" summary="Added validation dependency for future CRUD operations">
+      <option name="closed" value="true" />
+      <created>1715336350053</created>
+      <option name="number" value="LOCAL−00019" />
+      <option name="presentableId" value="LOCAL−00019" />
+      <updated>1715336350053</updated>
+    </task>
+    <task id="LOCAL−00020" summary="Added Flyway configuration">
+      <option name="closed" value="true" />
+      <created>1715339712596</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1715339712596</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +283,9 @@
     <MESSAGE value="Recipe related APIs for GET requests done according to current specification.&#10;Waiting for confirmation if customer wanted alphabetical ordering for seasonal and favourite recipes as well" />
     <MESSAGE value="Debugging in progress" />
     <MESSAGE value="API endpoints done" />
-    <option name="LAST_COMMIT_MESSAGE" value="API endpoints done" />
+    <MESSAGE value="Added validation dependency for future CRUD operations" />
+    <MESSAGE value="Added Flyway configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Flyway configuration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

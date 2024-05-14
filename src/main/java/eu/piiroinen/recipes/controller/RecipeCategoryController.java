@@ -1,6 +1,5 @@
 package eu.piiroinen.recipes.controller;
 
-import eu.piiroinen.recipes.model.Recipe;
 import eu.piiroinen.recipes.model.RecipeCategory;
 import eu.piiroinen.recipes.repository.RecipeCategoryRepository;
 import org.slf4j.Logger;
